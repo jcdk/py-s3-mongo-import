@@ -1,4 +1,4 @@
-# Scaffolding in Python/Flask for creating a MongoDB import and AWS S3 bucket upload app
+# Bsaic template in Python/Flask for creating a MongoDB import and AWS S3 bucket upload app
 
 Can be run on local with variables defined in .env or deployed to Railway and use configured environment variables.
 
