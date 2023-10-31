@@ -1,0 +1,147 @@
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    background-color: #e1dede;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 8%;
+}
+
+.container h1 {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+}
+
+.container h3 {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 21px;
+    color: #232222;
+    font-style: oblique;
+}
+.container form {
+    margin-top: 2%;
+}
+.container input[type=file] {
+    margin: 0.5%;
+    width: 25%;
+    height: 5%;
+    padding: 1%;
+    font-size: 20px;
+    font-family: "Gill Sans", sans-serif;
+    transition: all 0.5s ease-in-out;
+    border-color: #000;
+    border-width: 2px;
+}
+
+.container button {
+    padding: 0.5% 1% 0.5% 1%;
+    font-size: 20px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 600;
+    background-color: #fff;
+    border-color: #000;
+    border-width: 2px;
+}
+.container button:hover {
+    background-color: #fc4949;
+    border-width: 2px;
+    font-weight: 400;
+}
+.container p {
+    margin-top:7%;
+    font-family: "Gill Sans", sans-serif;
+    font-size:20px;
+    font-weight: 600;
+}
+.message h3{
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.output {
+    margin-top: 1em;
+    color: darkolivegreen;
+    font-family: "Gill Sans", sans-serif;
+    font-size: x-small;
+}
+
+.loading {
+    /* full screen, 20% opacity */
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* center align interior div */
+    justify-content: center;
+    align-items: center;
+    /* background blur */
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    display: none;
+}
+
+.dot-bricks {
+ position: relative;
+ top: 8px;
+ left: -9999px;
+ width: 10px;
+ height: 10px;
+ border-radius: 5px;
+ background-color: #000;
+ color: #000;
+ box-shadow: 9991px -16px 0 0 #000, 9991px 0 0 0 #000, 10007px 0 0 0 #000;
+ animation: dot-bricks 2s infinite ease;
+}
+
+@keyframes dot-bricks {
+ 0% {
+   box-shadow: 9991px -16px 0 0 #000, 9991px 0 0 0 #000, 10007px 0 0 0 #000;
+ }
+ 8.333% {
+   box-shadow: 10007px -16px 0 0 #000, 9991px 0 0 0 #000, 10007px 0 0 0 #000;
+ }
+ 16.667% {
+   box-shadow: 10007px -16px 0 0 #000, 9991px -16px 0 0 #000, 10007px 0 0 0 #000;
+ }
+ 25% {
+   box-shadow: 10007px -16px 0 0 #000, 9991px -16px 0 0 #000, 9991px 0 0 0 #000;
+ }
+ 33.333% {
+   box-shadow: 10007px 0 0 0 #000, 9991px -16px 0 0 #000, 9991px 0 0 0 #000;
+ }
+ 41.667% {
+   box-shadow: 10007px 0 0 0 #000, 10007px -16px 0 0 #000, 9991px 0 0 0 #000;
+ }
+ 50% {
+   box-shadow: 10007px 0 0 0 #000, 10007px -16px 0 0 #000, 9991px -16px 0 0 #000;
+ }
+ 58.333% {
+   box-shadow: 9991px 0 0 0 #000, 10007px -16px 0 0 #000, 9991px -16px 0 0 #000;
+ }
+ 66.666% {
+   box-shadow: 9991px 0 0 0 #000, 10007px 0 0 0 #000, 9991px -16px 0 0 #000;
+ }
+ 75% {
+   box-shadow: 9991px 0 0 0 #000, 10007px 0 0 0 #000, 10007px -16px 0 0 #000;
+ }
+ 83.333% {
+   box-shadow: 9991px -16px 0 0 #000, 10007px 0 0 0 #000, 10007px -16px 0 0 #000;
+ }
+ 91.667% {
+   box-shadow: 9991px -16px 0 0 #000, 9991px 0 0 0 #000, 10007px -16px 0 0 #000;
+ }
+ 100% {
+   box-shadow: 9991px -16px 0 0 #000, 9991px 0 0 0 #000, 10007px 0 0 0 #000;
+ }
+}

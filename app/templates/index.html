@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AP Catalog Import</title>
+    <link href="../static/main.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+    <h1>Excel file import</h1>
+    <h3> Please upload a file with an xls or xlsx extension</h3>
+    {{ mongouri | safe }}
+    <div class="message">
+    </div>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" accept=".xls,.xlsx" name="file"> 
+        <button type="submit" id="submit-btn"> Submit </button>
+        <div>
+            <input type="checkbox" id="delete-images" name="flags" value="delete-images">
+            <label for="delete-images">Delete existing item images</label>
+        </div>
+        <div>
+            <input type="checkbox" id="skip-image-import" name="flags" value="skip-image-import">
+            <label for="skip-image-import">Skip item image import</label>
+        </div>
+    </form>
+    <div class="output">
+        <div>{{ text | safe }}</div>
+    </div>
+    <div class="loading">
+        <div class="dot-bricks"></div>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#upload-form').submit(function(event) {
+                event.preventDefault();
+                var formData = new FormData(this);
+                $('#submit-btn').prop('disabled', true);
+                $('.loading').css('display', 'flex');
+                $.ajax({
+                    url: "{{url_for('upload')}}",
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        $('.output').html(response);
+                        $('#submit-btn').prop('disabled', false);
+                        $('.loading').hide();
+                    },
+                    error: function(xhr, status, error) {
+                        $('.output').html(response);
+                        $('#submit-btn').prop('disabled', false);
+                        $('.loading').hide();
+                    },
+                    complete: function() {
+                        $('#submit-btn').prop('disabled', false);
+                        $('.loading').hide();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

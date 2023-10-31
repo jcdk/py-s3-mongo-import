@@ -1,0 +1,11 @@
+flask
+pandas
+openpyxl
+pymongo
+python-dotenv
+requests
+pillow
+boto3
+cloudscraper
+cfscrape
+urllib3<2
