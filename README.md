@@ -1,4 +1,6 @@
-# Bsaic template in Python/Flask for creating a MongoDB import and AWS S3 bucket upload app
+# Basic template in Python/Flask for creating a MongoDB import and AWS S3 bucket upload app
+
+Runs in docker so that all dependencies are in a container.
 
 Can be run on local with variables defined in .env or deployed to Railway and use configured environment variables.
 
